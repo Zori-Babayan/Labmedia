@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+<h1 class="body-title">Список пользователей</h1>
+
+
+<div class="search_panel">
+    <div class="search-input">
+        <img src="uploads/lupa.png" alt="">
+        <input type="text" id="input" onkeyup="tableSearch()" class="input" placeholder="Поиск по имени или e-mail"/>
+    </div>
+    <div class="clear-filter" onclick="sortDefault()">
+        <img src="uploads/clear.png" alt="">
+        <span>Очистить фильтр</span>
+    </div>
+</div>
+
+
+<div class="sort-block">
+    <table class="sort-links">
+        <th></th>
+        <th class="title">Сортировка:</th>
+        <th class="sort-link" data-type="date"> Дата регистрации</th>
+        <th class="sort-link" data-type="rating">Рейтинг</th>
+    </table>
+</div>
+
+<div class="app-info">
+    <table class="table" id="table">
+        <thead>
+        <tr>
+            <th>Имя пользователя</th>
+            <th>E-mail</th>
+            <th data-type="date">Дата регистрации <br></th>
+            <th data-type="rating">Рейтинг</th>
+
+        </tr>
+        </thead>
+        <tbody id="data" class="user-list">
+
+        </tbody>
+    </table>
+</div>
+
+<nav>
+    <ul class="pagination">
+        <li class="page-item">
+            <button id="prevButton"><img src="/uploads/pngwing.png" alt=""></button>
+        </li>
+        <li class="page-item">
+            <button id="nextButton"><img src="/uploads/pngwing.png" alt=""></button>
+        </li>
+    </ul>
+</nav>
+
+
+<div class="popup-fade">
+    <div class="mymodal hidden">
+        <span class="modal_title"><b>Вы уверены, что хотите удалить пользователя?</b></span>
+        <div class="button_group">
+            <button class="confirm">Да</button>
+            <button class="cancel">Нет</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/index.js"></script>
+
+
+</body>
+
+</html>
